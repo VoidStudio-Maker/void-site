@@ -12,6 +12,26 @@
   <title>VOID Designer</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .about-socials { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+    .about-card { margin-top:28px; padding:28px; border:1px solid rgba(150,100,255,.25); border-radius:22px; background:rgba(255,255,255,.025); }
+    .about-card h3 { margin:10px 0; }
+    .support-modal { position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0,.78); backdrop-filter:blur(10px); }
+    .support-modal.active { display:flex; }
+    .support-modal-content { position:relative; width:min(520px,100%); padding:34px; border:1px solid rgba(150,100,255,.35); border-radius:24px; background:#0d0b12; box-shadow:0 25px 80px rgba(0,0,0,.55); }
+    .modal-close { position:absolute; top:12px; right:16px; border:0; background:transparent; color:inherit; font-size:32px; cursor:pointer; }
+    .pix-box { display:flex; flex-direction:column; gap:14px; margin-top:24px; padding:20px; border-radius:18px; border:1px solid rgba(150,100,255,.25); background:rgba(255,255,255,.035); }
+    .pix-box code { display:block; padding:14px; border-radius:12px; overflow-wrap:anywhere; word-break:break-word; background:rgba(0,0,0,.35); font-size:.9rem; }
+    .pix-box .btn { width:fit-content; }
+    body.modal-open { overflow:hidden; }
+    @media (max-width:700px) {
+      .about-socials { flex-direction:column; }
+      .about-socials .btn, .pix-box .btn { width:100%; }
+      .support-modal-content { padding:28px 20px; }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -53,6 +73,8 @@
       <a href="#sobre">Sobre</a>
 
       <a href="#contato">Contato</a>
+
+      <a href="#apoie">Apoiar</a>
 
     </nav>
 
@@ -510,95 +532,81 @@
 
 
     <!-- =========================
-         SOBRE
+         SOBRE MIM
     ========================== -->
-    <section
-      class="section about"
-      id="sobre"
-    >
-
-      <div>
-
-        <span class="eyebrow">
-          SOBRE A VOID
-        </span>
-
-        <h2>
-          Mais que edição.
-          <br>
-          <span>É identidade.</span>
-        </h2>
-
+    <section class="section about" id="sobre">
+      <div class="section-intro">
+        <span class="eyebrow">SOBRE MIM</span>
+        <h2>Olá, eu sou <span>Felipe de Souza.</span></h2>
+        <p>Sou o criador do <strong>VOID</strong>, um projeto focado em <strong>edição de vídeos e fotos</strong>, criatividade e criação de conteúdo.</p>
+        <p>Comecei editando pelo celular e, com o tempo, transformei esse interesse em um projeto maior. Hoje estou desenvolvendo minhas habilidades, criando meus próprios projetos e construindo o VOID passo a passo.</p>
+        <p>No futuro, quero levar o VOID ainda mais longe, criando ferramentas, aplicativos e projetos voltados para criadores.</p>
+        <p><strong>Esse é só o começo. 🟣</strong></p>
       </div>
 
+      <div class="about-card">
+        <span class="eyebrow">ONDE ME ACOMPANHAR</span>
+        <h3>Minhas plataformas</h3>
+        <p>Acompanhe minhas edições, projetos e tudo o que estou construindo com o VOID.</p>
 
-      <p>
-        A VOID nasceu da vontade de criar,
-        aprender e transformar ideias em
-        projetos digitais.
-
-        O objetivo é evoluir junto com os
-        criadores e, no futuro, construir
-        ferramentas próprias para facilitar
-        esse processo.
-      </p>
-
+        <div class="about-socials">
+          <a class="btn ghost" href="https://www.tiktok.com/@void.vdm" target="_blank" rel="noopener noreferrer">🎵 TikTok — @void.vdm</a>
+          <a class="btn ghost" href="https://www.youtube.com/@VOIDdesignerYT" target="_blank" rel="noopener noreferrer">▶️ YouTube — @VOIDdesignerYT</a>
+          <a class="btn ghost" href="https://www.instagram.com/voiddesigneryt/" target="_blank" rel="noopener noreferrer">📸 Instagram — @voiddesigneryt</a>
+        </div>
+      </div>
     </section>
 
 
     <!-- =========================
          CONTATO
     ========================== -->
-    <section
-      class="section contact"
-      id="contato"
-    >
-
+    <section class="section contact" id="contato">
       <div class="contact-box">
-
-        <span class="eyebrow">
-          CONTATO
-        </span>
-
-        <h2>
-          Tem uma ideia?
-        </h2>
-
-        <p>
-          Me conte o que você precisa e vamos
-          descobrir juntos se a VOID consegue
-          transformar sua ideia em um projeto.
-        </p>
-
+        <span class="eyebrow">CONTATO</span>
+        <h2>Tem uma ideia?</h2>
+        <p>Me conte o que você precisa e vamos descobrir juntos se o VOID consegue transformar sua ideia em um projeto.</p>
 
         <div class="contact-actions">
-
-          <a
-            class="btn primary"
-            href="mailto:seuemail@exemplo.com"
-          >
-            Enviar e-mail
-          </a>
-
-          <a
-            class="btn ghost"
-            href="#"
-            id="socialBtn"
-          >
-            Instagram
-          </a>
-
+          <a class="btn primary" href="mailto:voidstudio.oficial.1@gmail.com">✉️ Enviar e-mail</a>
+          <a class="btn ghost" href="https://www.instagram.com/voiddesigneryt/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
         </div>
 
-
-        <small>
-          Troque os links acima pelos seus
-          contatos reais antes de publicar.
-        </small>
-
+        <small>Antes de começar um trabalho, analiso o que você precisa e confirmo se consigo entregar o resultado desejado.</small>
       </div>
-
     </section>
+
+    <!-- =========================
+         APOIE O VOID
+    ========================== -->
+    <section class="section support" id="apoie">
+      <div class="contact-box">
+        <span class="eyebrow">APOIE O PROJETO</span>
+        <h2>Quer ajudar o <span>VOID?</span></h2>
+        <p>Se você gosta do meu trabalho e quiser apoiar os próximos projetos do VOID, sua contribuição pode ajudar no desenvolvimento de novos conteúdos, ferramentas e aplicativos.</p>
+        <button class="btn primary" type="button" onclick="openSupportModal()">💜 Apoiar o VOID</button>
+      </div>
+    </section>
+
+    <!-- =========================
+         MODAL PIX
+    ========================== -->
+    <div id="supportModal" class="support-modal" aria-hidden="true">
+      <div class="support-modal-content" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
+        <button class="modal-close" type="button" onclick="closeSupportModal()" aria-label="Fechar">×</button>
+        <span class="eyebrow">APOIE O VOID</span>
+        <h2 id="supportTitle">Obrigado pelo apoio 💜</h2>
+        <p>Se quiser contribuir com o projeto, você pode enviar um Pix usando a chave abaixo.</p>
+
+        <div class="pix-box">
+          <strong>Chave Pix</strong>
+          <code id="pixKey">ac022768-978f-4a92-8ea6-ed4af05830ab</code>
+          <button class="btn ghost" type="button" onclick="copyPixKey()">Copiar chave Pix</button>
+          <small id="pixFeedback">Obrigado por apoiar o desenvolvimento do VOID! 🟣</small>
+        </div>
+      </div>
+    </div>
+
 
   </main>
 
@@ -651,6 +659,41 @@
 
   </footer>
 
+
+  <script>
+    function openSupportModal() {
+      const modal = document.getElementById("supportModal");
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeSupportModal() {
+      const modal = document.getElementById("supportModal");
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    async function copyPixKey() {
+      const pixKey = "ac022768-978f-4a92-8ea6-ed4af05830ab";
+      const feedback = document.getElementById("pixFeedback");
+      try {
+        await navigator.clipboard.writeText(pixKey);
+        feedback.textContent = "Chave Pix copiada! 💜";
+      } catch (error) {
+        feedback.textContent = "Selecione a chave Pix acima para copiar.";
+      }
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeSupportModal();
+    });
+
+    document.getElementById("supportModal").addEventListener("click", function(event) {
+      if (event.target === this) closeSupportModal();
+    });
+  </script>
 
   <script src="script.js"></script>
 
