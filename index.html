@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,8 +9,9 @@
     content="VOID Designer — edição de fotos e vídeos com identidade."
   >
 
-  <title>VOID Designer</title>
+  <title>VOID — Designer & Editor</title>
 
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -27,6 +27,11 @@
     .pix-box .btn { width:fit-content; }
     body.modal-open { overflow:hidden; }
     @media (max-width:700px) {
+      .section { padding-top:64px; padding-bottom:64px; }
+      .portfolio-grid { gap:18px; }
+      .section-heading { gap:18px; }
+      .apps { padding-top:70px; padding-bottom:70px; }
+      .about { padding-top:58px; padding-bottom:58px; }
       .about-socials { flex-direction:column; }
       .about-socials .btn, .pix-box .btn { width:100%; }
       .support-modal-content { padding:28px 20px; }
@@ -186,7 +191,7 @@
       <div class="section-intro">
 
         <span class="eyebrow">
-          NOSSOS SERVIÇOS
+          SERVIÇOS
         </span>
 
         <h2>
@@ -194,8 +199,8 @@
         </h2>
 
         <p>
-          Edições pensadas para combinar com
-          seu conteúdo e com o estilo que você procura.
+          Serviços de edição e criação pensados para conteúdo digital,
+          redes sociais e projetos de criadores.
         </p>
 
       </div>
@@ -210,11 +215,11 @@
           </div>
 
           <h3>
-            Edição de Fotos
+            Design de Conteúdo
           </h3>
 
           <p>
-            Cores, efeitos, ajustes e tratamento visual.
+            Fotos, capas, thumbnails e tratamento visual para conteúdo.
           </p>
 
         </article>
@@ -227,11 +232,11 @@
           </div>
 
           <h3>
-            Edição de Vídeos
+            Edição de Vídeo
           </h3>
 
           <p>
-            Cortes, ritmo, transições, textos e efeitos.
+            Shorts, Reels e TikToks com cortes, ritmo, textos e efeitos.
           </p>
 
         </article>
@@ -244,11 +249,11 @@
           </div>
 
           <h3>
-            Edits Personalizados
+            Conteúdo Personalizado
           </h3>
 
           <p>
-            Um projeto feito de acordo com a sua ideia.
+            Edições desenvolvidas de acordo com a ideia e identidade do projeto.
           </p>
 
         </article>
@@ -261,12 +266,11 @@
           </div>
 
           <h3>
-            Projetos Especiais
+            Social Media
           </h3>
 
           <p>
-            Conteúdos para marcas, criadores
-            e projetos pessoais.
+            Criação e organização de conteúdos para redes sociais e criadores.
           </p>
 
         </article>
@@ -432,6 +436,36 @@
 
 
     <!-- =========================
+         SOBRE MIM
+    ========================== -->
+    <section class="section about" id="sobre">
+      <div class="section-intro">
+        <span class="eyebrow">SOBRE MIM</span>
+        <h2>Por trás dos edits, existe uma pessoa.</h2>
+        <h3>Olá, eu sou <span>Felipe de Souza.</span></h3>
+        <p>Sou o criador do <strong>VOID</strong>, um projeto focado em <strong>edição de vídeos, design e criação de conteúdo</strong>.</p>
+        <p>Comecei editando pelo celular e, com o tempo, transformei esse interesse em um projeto maior. Hoje estou desenvolvendo minhas habilidades, criando meus próprios projetos e construindo o VOID passo a passo.</p>
+        <p>No futuro, quero levar o VOID ainda mais longe, criando ferramentas, aplicativos e projetos voltados para criadores.</p>
+        <p><strong>Esse é só o começo. 🟣</strong></p>
+      </div>
+
+      <div class="about-card">
+        <span class="eyebrow">ONDE ME ACOMPANHAR</span>
+        <h3>Minhas plataformas</h3>
+        <p>Acompanhe minhas edições, projetos e tudo o que estou construindo com o VOID.</p>
+
+        <div class="about-socials">
+          <a class="btn ghost" href="https://www.tiktok.com/@void.vdm" target="_blank" rel="noopener noreferrer">🎵 TikTok — @void.vdm</a>
+          <a class="btn ghost" href="https://www.youtube.com/@VOIDdesignerYT" target="_blank" rel="noopener noreferrer">▶️ YouTube — @VOIDdesignerYT</a>
+          <a class="btn ghost" href="https://www.instagram.com/voiddesigneryt/" target="_blank" rel="noopener noreferrer">📸 Instagram — @voiddesigneryt</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- =========================
          VOID STUDIO
     ========================== -->
     <section
@@ -533,33 +567,6 @@
 
 
     <!-- =========================
-         SOBRE MIM
-    ========================== -->
-    <section class="section about" id="sobre">
-      <div class="section-intro">
-        <span class="eyebrow">SOBRE MIM</span>
-        <h2>Olá, eu sou <span>Felipe de Souza.</span></h2>
-        <p>Sou o criador do <strong>VOID</strong>, um projeto focado em <strong>edição de vídeos e fotos</strong>, criatividade e criação de conteúdo.</p>
-        <p>Comecei editando pelo celular e, com o tempo, transformei esse interesse em um projeto maior. Hoje estou desenvolvendo minhas habilidades, criando meus próprios projetos e construindo o VOID passo a passo.</p>
-        <p>No futuro, quero levar o VOID ainda mais longe, criando ferramentas, aplicativos e projetos voltados para criadores.</p>
-        <p><strong>Esse é só o começo. 🟣</strong></p>
-      </div>
-
-      <div class="about-card">
-        <span class="eyebrow">ONDE ME ACOMPANHAR</span>
-        <h3>Minhas plataformas</h3>
-        <p>Acompanhe minhas edições, projetos e tudo o que estou construindo com o VOID.</p>
-
-        <div class="about-socials">
-          <a class="btn ghost" href="https://www.tiktok.com/@void.vdm" target="_blank" rel="noopener noreferrer">🎵 TikTok — @void.vdm</a>
-          <a class="btn ghost" href="https://www.youtube.com/@VOIDdesignerYT" target="_blank" rel="noopener noreferrer">▶️ YouTube — @VOIDdesignerYT</a>
-          <a class="btn ghost" href="https://www.instagram.com/voiddesigneryt/" target="_blank" rel="noopener noreferrer">📸 Instagram — @voiddesigneryt</a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================
          CONTATO
     ========================== -->
     <section class="section contact" id="contato">
@@ -655,7 +662,7 @@
 
 
     <span>
-      © 2026 VOID Designer
+      © 2026 VOID — Designer & Editor
     </span>
 
   </footer>
