@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="VOID Designer — edição de vídeos, design para conteúdo, social media e criação digital.">
   <title>VOID — Designer & Editor</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== RESET & BASE ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: #07070a;
@@ -139,15 +137,13 @@
       letter-spacing: 1px;
     }
 
-    /* ===== MAIN CONTENT ===== */
+    /* ===== MAIN ===== */
     .main {
       margin-left: 260px;
       flex: 1;
       padding: 40px 48px;
       max-width: 1400px;
     }
-
-    /* Hero text */
     .page-header {
       margin-bottom: 40px;
     }
@@ -172,7 +168,7 @@
       font-size: 1rem;
     }
 
-    /* ===== 4 BIG CARDS ===== */
+    /* 4 BIG CARDS */
     .work-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -242,7 +238,7 @@
       letter-spacing: .5px;
     }
 
-    /* ===== SECTIONS ===== */
+    /* SECTIONS */
     .section-block {
       margin-bottom: 48px;
     }
@@ -273,7 +269,7 @@
     }
     .section-title a:hover { color: #fff; }
 
-    /* Destaques grid */
+    /* Destaques */
     .destaques-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -290,8 +286,7 @@
       border-color: rgba(157,85,255,.4);
       transform: translateY(-4px);
     }
-    .destaque-card img,
-    .destaque-card .thumb {
+    .destaque-card img {
       width: 100%;
       height: 120px;
       object-fit: cover;
@@ -320,65 +315,76 @@
       color: #c4a8ff;
     }
 
-    /* Anúncios em destaque */
-    .ads-mini-grid {
+    /* ===== ANÚNCIOS VERTICAIS (TikTok) ===== */
+    .ads-vertical-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 24px;
     }
-    .ad-mini {
+    .ad-vertical {
       background: rgba(255,255,255,.03);
-      border: 1px solid rgba(157,85,255,.15);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: border-color .2s, transform .2s;
-    }
-    .ad-mini:hover {
-      border-color: rgba(157,85,255,.4);
-      transform: translateY(-4px);
-    }
-    .ad-mini video,
-    .ad-mini img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      background: #0a090e;
-    }
-    .ad-mini .info {
-      padding: 14px;
-    }
-    .ad-mini .info strong {
-      display: block;
-      font-size: .95rem;
-      margin-bottom: 4px;
-    }
-    .ad-mini .info span {
-      font-size: .75rem;
-      color: #a98bff;
-      font-weight: 600;
-    }
-
-    /* Cliente cards */
-    .client-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .client-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(157,85,255,.18);
+      border: 1px solid rgba(157,85,255,.2);
       border-radius: 18px;
       overflow: hidden;
       transition: transform .25s, border-color .25s;
     }
+    .ad-vertical:hover {
+      transform: translateY(-6px);
+      border-color: rgba(157,85,255,.5);
+    }
+    .ad-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #0a090e;
+      overflow: hidden;
+    }
+    .ad-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ad-info {
+      padding: 16px;
+    }
+    .ad-info strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .ad-info span {
+      font-size: .75rem;
+      color: #a98bff;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== CLIENTE CLICÁVEL ===== */
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .client-card {
+      display: block;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(157,85,255,.18);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+      color: inherit;
+    }
     .client-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(157,85,255,.45);
+      transform: translateY(-6px);
+      border-color: rgba(157,85,255,.5);
+      box-shadow: 0 18px 40px rgba(0,0,0,.4);
     }
     .client-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
+      display: block;
     }
     .client-card .body {
       padding: 18px;
@@ -391,11 +397,11 @@
       margin-bottom: 6px;
     }
     .client-card h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 8px;
     }
     .client-card p {
-      font-size: .85rem;
+      font-size: .88rem;
       color: #a8a5b7;
       line-height: 1.55;
     }
@@ -522,22 +528,21 @@
     @media (max-width: 1200px) {
       .work-grid { grid-template-columns: repeat(2, 1fr); }
       .destaques-grid { grid-template-columns: repeat(2, 1fr); }
-      .ads-mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .ads-vertical-grid { grid-template-columns: repeat(2, 1fr); }
       .client-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 900px) {
       .sidebar { transform: translateX(-100%); }
       .main { margin-left: 0; padding: 24px; }
-      .work-grid, .destaques-grid, .ads-mini-grid, .client-grid { grid-template-columns: 1fr; }
+      .work-grid, .destaques-grid, .ads-vertical-grid, .client-grid { grid-template-columns: 1fr; }
+      .ad-video-wrapper { max-width: 320px; margin: 0 auto; }
       .studio-bar { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- =========================
-       SIDEBAR
-  ========================== -->
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-logo">
       VOID
@@ -546,7 +551,6 @@
 
     <nav class="sidebar-nav">
       <a href="#inicio" class="active">🏠 Início</a>
-      <a href="#servicos">✦ Serviços</a>
       <a href="#portfolio">🖼 Portfólio</a>
       <a href="#anuncios">📣 Anúncios</a>
       <a href="#cliente">👤 Cliente</a>
@@ -573,12 +577,9 @@
     </div>
   </aside>
 
-  <!-- =========================
-       MAIN
-  ========================== -->
+  <!-- MAIN -->
   <main class="main">
 
-    <!-- HEADER -->
     <div class="page-header" id="inicio">
       <div class="eyebrow">MEU TRABALHO</div>
       <h1>Edits, Anúncios, Posts<br>e um <span>cliente em andamento</span>.</h1>
@@ -625,7 +626,7 @@
 
       <div class="work-card">
         <div class="work-card-media">
-          <img src="images/client/solaris-h1.png.png" alt="Cliente em andamento" onerror="this.src='https://via.placeholder.com/300x200/1a1a2e/9d55ff?text=Cliente'">
+          <img src="images/client/solaris-h1.png" alt="Cliente" onerror="this.src='https://via.placeholder.com/300x200/1a1a2e/9d55ff?text=Cliente'">
           <span class="badge-live">EM ANDAMENTO</span>
         </div>
         <div class="work-card-body">
@@ -637,7 +638,7 @@
       </div>
     </div>
 
-    <!-- DESTAQUES (Portfólio) -->
+    <!-- DESTAQUES -->
     <section class="section-block" id="portfolio">
       <div class="section-title">
         <h2>DESTAQUES</h2>
@@ -645,7 +646,7 @@
       </div>
       <div class="destaques-grid">
         <a class="destaque-card" href="https://youtube.com/shorts/RJameyauLhE" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/RJameyauLhE/mqdefault.jpg" alt="Lamborghini Cinematic">
+          <img src="https://img.youtube.com/vi/RJameyauLhE/mqdefault.jpg" alt="Lamborghini">
           <div class="info">
             <strong>Lamborghini</strong>
             <span>Cinematic Edit</span>
@@ -653,7 +654,7 @@
           </div>
         </a>
         <a class="destaque-card" href="https://youtube.com/shorts/2vgwbYwcuFg" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/2vgwbYwcuFg/mqdefault.jpg" alt="BMW Power">
+          <img src="https://img.youtube.com/vi/2vgwbYwcuFg/mqdefault.jpg" alt="BMW">
           <div class="info">
             <strong>BMW</strong>
             <span>Power Edit</span>
@@ -669,7 +670,7 @@
           </div>
         </a>
         <a class="destaque-card" href="https://youtube.com/shorts/r-YlK7rLDQc" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/r-YlK7rLDQc/mqdefault.jpg" alt="Anime Flow">
+          <img src="https://img.youtube.com/vi/r-YlK7rLDQc/mqdefault.jpg" alt="Anime">
           <div class="info">
             <strong>Anime Edit</strong>
             <span>Flow</span>
@@ -679,35 +680,41 @@
       </div>
     </section>
 
-    <!-- ANÚNCIOS EM DESTAQUE -->
+    <!-- ANÚNCIOS VERTICAIS -->
     <section class="section-block" id="anuncios">
       <div class="section-title">
         <h2>ANÚNCIOS EM DESTAQUE</h2>
       </div>
-      <div class="ads-mini-grid">
-        <div class="ad-mini">
-          <video controls preload="metadata" playsinline>
-            <source src="videos/iphone-17-pro.mp4.mp4" type="video/mp4">
-          </video>
-          <div class="info">
+      <div class="ads-vertical-grid">
+        <div class="ad-vertical">
+          <div class="ad-video-wrapper">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/iphone-17-pro.mp4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="ad-info">
             <strong>iPhone 17 Pro</strong>
             <span>TECNOLOGIA</span>
           </div>
         </div>
-        <div class="ad-mini">
-          <video controls preload="metadata" playsinline>
-            <source src="videos/velum-noctis.mp4.mp4" type="video/mp4">
-          </video>
-          <div class="info">
+        <div class="ad-vertical">
+          <div class="ad-video-wrapper">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/velum-noctis.mp4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="ad-info">
             <strong>VELUM Noctis</strong>
             <span>BELEZA</span>
           </div>
         </div>
-        <div class="ad-mini">
-          <video controls preload="metadata" playsinline>
-            <source src="videos/cafe-aurora.mp4.mp4" type="video/mp4">
-          </video>
-          <div class="info">
+        <div class="ad-vertical">
+          <div class="ad-video-wrapper">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/cafe-aurora.mp4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="ad-info">
             <strong>Café Aurora</strong>
             <span>CAFETERIA</span>
           </div>
@@ -715,36 +722,36 @@
       </div>
     </section>
 
-    <!-- CLIENTE EM ANDAMENTO -->
+    <!-- CLIENTE CLICÁVEL -->
     <section class="section-block" id="cliente">
       <div class="section-title">
         <h2>CLIENTE EM ANDAMENTO — @personal_renatalima</h2>
       </div>
       <div class="client-grid">
-        <article class="client-card">
+        <a href="images/client/solaris-h1.png" target="_blank" class="client-card">
           <img src="images/client/solaris-h1.png" alt="SOLARIS H1">
           <div class="body">
             <div class="meta">ÁUDIO • PRODUTO PREMIUM</div>
             <h3>SOLARIS H1</h3>
             <p>Peça publicitária de fones sem fio com estética minimalista e premium. Destaque para a frase “O SEU MUNDO. O SEU SOM.” interagindo com o produto.</p>
           </div>
-        </article>
-        <article class="client-card">
+        </a>
+        <a href="images/client/aura-skincare.jpg" target="_blank" class="client-card">
           <img src="images/client/aura-skincare.jpg" alt="AURA">
           <div class="body">
             <div class="meta">SKINCARE • BELEZA</div>
             <h3>AURA</h3>
             <p>Conceito visual para cuidados com a pele, tons terrosos e composição editorial. Identidade delicada e hierarquia clara entre marca e mensagem.</p>
           </div>
-        </article>
-        <article class="client-card">
+        </a>
+        <a href="images/client/krypton-k9.jpg" target="_blank" class="client-card">
           <img src="images/client/krypton-k9.jpg" alt="KRYPTON K9">
           <div class="body">
             <div class="meta">GAMING • TECNOLOGIA</div>
             <h3>KRYPTON K9</h3>
             <p>Conceito publicitário para teclado gamer com estética tecnológica, iluminação e contraste. Linguagem voltada ao público gamer.</p>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -760,7 +767,7 @@
       <a href="#contato" class="btn-studio">SAIBA MAIS →</a>
     </div>
 
-    <!-- SOBRE + CONTATO (compacto) -->
+    <!-- SOBRE -->
     <section class="section-block" id="sobre" style="margin-top:48px;">
       <div class="section-title"><h2>SOBRE MIM</h2></div>
       <p style="color:#a8a5b7; max-width:700px; margin-bottom:12px;">
@@ -771,6 +778,7 @@
       </p>
     </section>
 
+    <!-- CONTATO -->
     <section class="section-block" id="contato">
       <div class="section-title"><h2>CONTATO</h2></div>
       <p style="color:#a8a5b7; margin-bottom:18px;">Tem uma ideia? Me conte o que você precisa.</p>
