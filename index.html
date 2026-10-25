@@ -25,31 +25,28 @@
       font-family: Inter, system-ui, -apple-system, sans-serif;
       line-height: 1.5;
       min-height: 100vh;
-      display: flex;
     }
     a { color: inherit; text-decoration: none; }
     img, video { max-width: 100%; display: block; }
 
-    /* ========== SIDEBAR ========== */
-    .sidebar {
-      width: 240px;
-      min-height: 100vh;
-      background: #0a0a0f;
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      padding: 28px 18px;
-      position: fixed;
-      left: 0;
+    /* ========== HEADER ========== */
+    .header {
+      position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 5%;
+      background: rgba(7,7,10,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .logo {
       font-size: 26px;
       font-weight: 900;
       font-style: italic;
       letter-spacing: -1.5px;
-      margin-bottom: 4px;
     }
     .logo span {
       display: block;
@@ -58,103 +55,43 @@
       font-style: normal;
       letter-spacing: 2.5px;
       color: #a98bff;
-      margin-top: 2px;
+      margin-top: 1px;
     }
-    .sidebar-nav {
-      margin-top: 36px;
+    .nav {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-    .sidebar-nav a {
-      display: flex;
+      gap: 22px;
       align-items: center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 10px;
-      font-size: 13.5px;
+    }
+    .nav a {
+      font-size: 14px;
       font-weight: 500;
-      color: #b8b4c7;
-      transition: all .2s;
+      color: #c5c1d4;
+      transition: color .2s;
     }
-    .sidebar-nav a:hover,
-    .sidebar-nav a.active {
-      background: rgba(157,85,255,.14);
+    .nav a:hover { color: #fff; }
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #9d55ff, #6c24ff);
       color: #fff;
-    }
-    .sidebar-nav a.active {
-      border-left: 3px solid var(--purple);
-    }
-    .sidebar-bottom {
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .studio-card {
-      background: rgba(157,85,255,.08);
-      border: 1px solid rgba(157,85,255,.22);
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 16px;
-    }
-    .studio-card strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-    .studio-card p {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .studio-card a {
-      display: inline-block;
-      font-size: 12px;
       font-weight: 700;
-      color: #c4a8ff;
-    }
-    .socials {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 14px;
-    }
-    .socials a {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: rgba(255,255,255,.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      transition: background .2s;
-    }
-    .socials a:hover { background: rgba(157,85,255,.2); }
-    .sidebar-footer {
-      text-align: center;
-      font-size: 10px;
-      color: #555;
-      letter-spacing: 0.8px;
+      font-size: 13px;
     }
 
     /* ========== MAIN ========== */
     .main {
-      margin-left: 240px;
-      flex: 1;
-      padding: 32px 40px 50px;
-      max-width: 1280px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 5% 60px;
     }
 
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 40px;
       align-items: center;
-      margin-bottom: 48px;
-      padding-bottom: 20px;
+      margin-bottom: 56px;
     }
     .hero-left .badge {
       display: inline-block;
@@ -169,7 +106,7 @@
       margin-bottom: 18px;
     }
     .hero-left h1 {
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 16px;
@@ -177,14 +114,15 @@
     .hero-left h1 span { color: var(--purple); }
     .hero-left p {
       color: var(--muted);
-      font-size: 1rem;
-      max-width: 480px;
-      margin-bottom: 26px;
+      font-size: 1.02rem;
+      max-width: 500px;
+      margin-bottom: 28px;
     }
     .hero-actions {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       align-items: center;
+      flex-wrap: wrap;
     }
     .btn-primary {
       display: inline-flex;
@@ -215,7 +153,7 @@
       border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 4/3;
-      background: radial-gradient(circle at 60% 40%, rgba(157,85,255,.25), transparent 60%), #0d0b14;
+      background: radial-gradient(circle at 60% 40%, rgba(157,85,255,.22), transparent 65%), #0d0b14;
       border: 1px solid rgba(157,85,255,.2);
       display: flex;
       align-items: center;
@@ -233,10 +171,10 @@
       max-width: 160px;
     }
     .hero-art {
-      font-size: 4.5rem;
+      font-size: 4.8rem;
       font-weight: 900;
       font-style: italic;
-      color: rgba(157,85,255,.15);
+      color: rgba(157,85,255,.18);
       letter-spacing: -3px;
     }
 
@@ -246,9 +184,11 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .section-head h2 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -266,12 +206,12 @@
       color: var(--muted);
     }
 
-    /* EXPLORE PORTFOLIO - 4 CARDS */
+    /* EXPLORE PORTFOLIO */
     .explore-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 48px;
+      gap: 18px;
+      margin-bottom: 52px;
     }
     .explore-card {
       background: var(--surface);
@@ -285,7 +225,7 @@
       border-color: rgba(157,85,255,.45);
     }
     .explore-card .thumb {
-      height: 110px;
+      height: 120px;
       background: #0d0b12;
       overflow: hidden;
     }
@@ -295,20 +235,20 @@
       object-fit: cover;
     }
     .explore-card .body {
-      padding: 14px 16px 16px;
+      padding: 16px;
     }
     .explore-card h3 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 4px;
     }
     .explore-card p {
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--muted);
       margin-bottom: 10px;
     }
     .explore-card .link {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #c4a8ff;
     }
@@ -318,7 +258,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-bottom: 48px;
+      margin-bottom: 52px;
     }
     .destaque-item {
       background: var(--surface);
@@ -333,40 +273,36 @@
     }
     .destaque-item img {
       width: 100%;
-      height: 100px;
+      height: 110px;
       object-fit: cover;
     }
     .destaque-item .info {
-      padding: 12px 14px;
+      padding: 13px 15px;
     }
     .destaque-item strong {
       display: block;
-      font-size: 13px;
-      margin-bottom: 2px;
+      font-size: 13.5px;
+      margin-bottom: 3px;
     }
     .destaque-item span {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--muted);
     }
 
-    /* BOTTOM AREA: ADS + POSTS + SIDE PANEL */
+    /* BOTTOM AREA */
     .bottom-area {
       display: grid;
-      grid-template-columns: 1.6fr 0.9fr;
-      gap: 28px;
+      grid-template-columns: 1.65fr 0.9fr;
+      gap: 32px;
       align-items: start;
     }
 
-    /* Ads + Posts */
-    .ads-posts {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    /* Ads */
     .ads-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
+      margin-bottom: 28px;
     }
     .ad-card {
       background: var(--surface);
@@ -390,37 +326,41 @@
       object-fit: cover;
     }
     .ad-card .info {
-      padding: 12px 14px;
+      padding: 13px 15px;
     }
     .ad-card strong {
       display: block;
-      font-size: 13px;
-      margin-bottom: 2px;
+      font-size: 13.5px;
+      margin-bottom: 3px;
     }
     .ad-card span {
-      font-size: 11px;
+      font-size: 11.5px;
       color: #a98bff;
       font-weight: 600;
     }
 
+    /* Posts demonstrativos */
     .posts-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 16px;
+      padding: 18px;
+      margin-bottom: 28px;
     }
     .posts-card h3 {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 700;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .posts-card .note {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
     }
     .posts-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
     .post-item {
       text-align: center;
@@ -430,14 +370,57 @@
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       border: 1px solid rgba(157,85,255,.15);
+      transition: border-color .2s;
+    }
+    .post-item:hover img {
+      border-color: rgba(157,85,255,.45);
     }
     .post-item span {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--muted);
     }
+
+    /* Cliente em andamento (discreto) */
+    .client-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+    .client-note h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .client-note h3::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--purple);
+      box-shadow: 0 0 8px var(--purple);
+    }
+    .client-note p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .client-note a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c4a8ff;
+    }
+    .client-note a:hover { color: #fff; }
 
     /* RIGHT PANEL */
     .right-panel {
@@ -456,7 +439,7 @@
       margin-bottom: 8px;
     }
     .cta-card p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--muted);
       margin-bottom: 16px;
     }
@@ -467,7 +450,7 @@
       padding: 20px;
     }
     .diferenciais h4 {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       margin-bottom: 14px;
       color: #c4a8ff;
@@ -479,7 +462,7 @@
       gap: 10px;
     }
     .diferenciais li {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--muted);
       display: flex;
       align-items: center;
@@ -498,7 +481,7 @@
       text-align: center;
     }
     .invite-card p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--muted);
       margin-bottom: 14px;
     }
@@ -508,7 +491,7 @@
       font-weight: 600;
       letter-spacing: 1px;
       color: #777;
-      margin-top: 10px;
+      margin-top: 8px;
     }
     .quote span {
       display: block;
@@ -517,6 +500,24 @@
       font-style: italic;
       color: rgba(157,85,255,.4);
       margin-top: 6px;
+    }
+
+    /* FOOTER */
+    .footer {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 24px 5%;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: #777;
+    }
+    .footer .logo {
+      font-size: 20px;
     }
 
     /* MODAL PIX */
@@ -578,70 +579,41 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1100px) {
+    @media (max-width: 1000px) {
       .hero { grid-template-columns: 1fr; }
       .explore-grid, .destaques-grid { grid-template-columns: repeat(2, 1fr); }
       .bottom-area { grid-template-columns: 1fr; }
       .ads-row { grid-template-columns: repeat(3, 1fr); }
     }
-    @media (max-width: 800px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 16px;
-      }
-      .sidebar-nav { flex-direction: row; flex-wrap: wrap; margin-top: 16px; }
-      .sidebar-bottom { display: none; }
-      .main { margin-left: 0; padding: 24px 16px; }
+    @media (max-width: 700px) {
+      .nav { display: none; }
       .explore-grid, .destaques-grid, .ads-row, .posts-grid { grid-template-columns: 1fr; }
-      .hero-left h1 { font-size: 1.9rem; }
+      .hero-left h1 { font-size: 2rem; }
+      .header { padding: 14px 4%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ========== SIDEBAR ========== -->
-  <aside class="sidebar">
-    <div class="logo">
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#inicio" class="logo">
       VOID
       <span>DESIGNER</span>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a href="#inicio" class="active">Início</a>
+    </a>
+    <nav class="nav">
+      <a href="#inicio">Início</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#edits">Edits</a>
       <a href="#anuncios">Anúncios</a>
       <a href="#posts">Posts</a>
-      <a href="#cliente">Cliente em andamento</a>
+      <a href="#cliente">Cliente</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
+      <a href="#contato" class="nav-cta">Falar comigo</a>
     </nav>
+  </header>
 
-    <div class="sidebar-bottom">
-      <div class="studio-card">
-        <strong>VOID Studio</strong>
-        <p>App de edição em desenvolvimento</p>
-        <a href="#contato">Saiba mais →</a>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.tiktok.com/@void.vdm" target="_blank" rel="noopener" title="TikTok">🎵</a>
-        <a href="https://www.youtube.com/@VOIDdesignerYT" target="_blank" rel="noopener" title="YouTube">▶</a>
-        <a href="https://www.instagram.com/voiddesigneryt/" target="_blank" rel="noopener" title="Instagram">📸</a>
-      </div>
-
-      <div class="sidebar-footer">
-        VOID / DESIGNER<br>
-        IDEIAS · EDIÇÃO · VISUAL
-      </div>
-    </div>
-  </aside>
-
-  <!-- ========== MAIN ========== -->
   <main class="main">
 
     <!-- HERO -->
@@ -662,11 +634,11 @@
     </section>
 
     <!-- EXPLORE O PORTFÓLIO -->
-    <div class="section-head">
+    <div class="section-head" id="portfolio">
       <h2>Explore o portfólio</h2>
       <span>Escolha uma categoria e veja os trabalhos.</span>
     </div>
-    <div class="explore-grid" id="portfolio">
+    <div class="explore-grid">
       <a href="#edits" class="explore-card">
         <div class="thumb">
           <img src="https://img.youtube.com/vi/RJameyauLhE/mqdefault.jpg" alt="Edits">
@@ -693,23 +665,23 @@
         </div>
         <div class="body">
           <h3>Posts</h3>
-          <p>3 projetos</p>
+          <p>3 projetos demonstrativos</p>
           <span class="link">Ver →</span>
         </div>
       </a>
       <a href="#cliente" class="explore-card">
-        <div class="thumb">
-          <img src="images/client/solaris-h1.png" alt="Cliente" onerror="this.src='https://via.placeholder.com/300x200/1a1a2e/9d55ff?text=Cliente'">
+        <div class="thumb" style="background:linear-gradient(135deg,#1a1025,#0d0b14);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:28px;opacity:.5;">👤</span>
         </div>
         <div class="body">
           <h3>Cliente em andamento</h3>
-          <p>1 projeto</p>
+          <p>Projeto em desenvolvimento</p>
           <span class="link">Ver →</span>
         </div>
       </a>
     </div>
 
-    <!-- DESTAQUES DO PORTFÓLIO -->
+    <!-- DESTAQUES -->
     <div class="section-head" id="edits">
       <h2>Destaques do portfólio</h2>
       <a href="https://www.youtube.com/@VOIDdesignerYT" target="_blank" style="font-size:13px;color:#a98bff;font-weight:600;">Ver todos →</a>
@@ -745,9 +717,9 @@
       </a>
     </div>
 
-    <!-- BOTTOM: ADS + POSTS + RIGHT PANEL -->
+    <!-- BOTTOM AREA -->
     <div class="bottom-area">
-      <div class="ads-posts">
+      <div>
         <!-- ANÚNCIOS -->
         <div id="anuncios">
           <div class="section-head">
@@ -790,10 +762,11 @@
           </div>
         </div>
 
-        <!-- POSTS / CLIENTE -->
+        <!-- POSTS DEMONSTRATIVOS -->
         <div id="posts">
-          <div class="posts-card" id="cliente">
-            <h3>Posts — Cliente em andamento (@personal_renatalima)</h3>
+          <div class="posts-card">
+            <h3>Posts demonstrativos</h3>
+            <p class="note">Peças criadas para praticar e demonstrar habilidades de design e composição visual.</p>
             <div class="posts-grid">
               <a href="images/client/solaris-h1.png" target="_blank" class="post-item">
                 <img src="images/client/solaris-h1.png" alt="SOLARIS H1">
@@ -808,6 +781,17 @@
                 <span>Krypton K9</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        <!-- CLIENTE EM ANDAMENTO (discreto) -->
+        <div id="cliente">
+          <div class="client-note">
+            <h3>Cliente em andamento</h3>
+            <p>Atualmente desenvolvendo um projeto com uma cliente. Mais detalhes serão compartilhados conforme o trabalho avançar.</p>
+            <a href="https://www.instagram.com/personal_renatalima/" target="_blank" rel="noopener">
+              📸 @personal_renatalima
+            </a>
           </div>
         </div>
       </div>
@@ -842,7 +826,7 @@
       </div>
     </div>
 
-    <!-- SOBRE + CONTATO (compacto) -->
+    <!-- SOBRE -->
     <section id="sobre" style="margin-top:50px;padding-top:30px;border-top:1px solid rgba(255,255,255,.06);">
       <div class="section-head"><h2>Sobre mim</h2></div>
       <p style="color:var(--muted);max-width:640px;margin-bottom:12px;">
@@ -853,6 +837,7 @@
       </p>
     </section>
 
+    <!-- CONTATO -->
     <section id="contato" style="margin-top:36px;">
       <div class="section-head"><h2>Contato</h2></div>
       <p style="color:var(--muted);margin-bottom:16px;">Tem uma ideia? Me conte o que você precisa.</p>
@@ -864,6 +849,12 @@
     </section>
 
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="#inicio" class="logo">VOID <span>DESIGNER</span></a>
+    <span>© 2026 VOID Designer</span>
+  </footer>
 
   <!-- MODAL PIX -->
   <div id="supportModal" class="support-modal" aria-hidden="true">
